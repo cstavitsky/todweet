@@ -1,0 +1,11 @@
+How can we send a tweet from a rails server?
+
+How can we look up peoples' name
+
+How to get data and send data to/from twitter api? Can you read twitter data you're interested in reading?
+
+Twitter o-auth in an application (since we want people to log in with twitter). Login won't be normal password/email combo. O-auth sends back credentials.
+
+Twitter/sinatra/o-auth challenge. "The tweet-now challenge"
+
+Nice to have == background job that's always running, and sends the tweets when task is completed.
