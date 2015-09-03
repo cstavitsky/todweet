@@ -28,3 +28,7 @@ group :test, :development do
   gem 'factory_girl'
   gem 'faker'
 end
+
+gem 'twitter'
+gem 'omniauth-twitter'
+gem 'omniauth'
