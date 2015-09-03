@@ -2,7 +2,23 @@
 
   <div class="title-section">
     <h1> It's time to Compweet Your Twasks! </h1>
-    <div class="task_container"></div>
+    <div class="task-container">
+      <ul class="task-list">
+        <% @user.tasks.each do |task| %>
+        <li class="task"><input id="checkboxes" type="checkbox"><%= task.description %>
+<a id="Twitter_button" href="https://twitter.com/share?url=google.com&text=I just finished <%= task.description %>!" class="twitter-share-button" data-via="<%=
+@user.nickname %>">Tweet</a>
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        </li>
+      <% end %>
+      </ul>
+    </div>
   </div>
 
 </div>
+
+
+
+
+
