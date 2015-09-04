@@ -8,20 +8,24 @@ $(document).ready(function() {
 
   // });
 
+  //when the page loads, find all the checkboxes that have completed tasks and select them, and then change them to prop checked = true.
 
 
-//   $(".task").dblclick(function(event) {
-//     event.preventDefault();
 
-//     var request=$.ajax({
-//       method: "delete",
-//       url: "/tasks"
-//     });
+  $(".checkboxform").on("click", ":checkbox", function(){
 
-//     request.done( function (response) {
-//     $this.hide('slow', function(){
-//       $this.remove();
-//     });
-//   });
+
+    var id = $(this).attr('id');
+
+    var request = $.ajax({
+      url: "/tasks/"+id+"/edit",
+      method: 'put'
+    })
+
+  request.done(function(responseData){
+    // $("#"+id).prop("checked", true);
+  })
+
+  })
 });
 

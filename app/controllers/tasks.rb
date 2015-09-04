@@ -14,3 +14,19 @@ end
 #   @task.destroy!
 #   redirect '/'
 # end
+
+put '/tasks/:id/edit' do
+  @task = Task.find_by_id(params[:id])
+  @task.completed = true
+  if request.xhr?
+    if @task.save
+      status 200
+    else
+      status 422
+    end
+  else
+    erb :"/show"
+  end
+
+end
+
