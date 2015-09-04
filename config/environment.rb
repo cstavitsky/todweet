@@ -42,9 +42,8 @@ configure do
 
   # Use omniauth stuff.
   use OmniAuth::Builder do
-    provider :twitter, 'Vw9bPHQW7gjKJcYFqhWVPXAnD', 'jRIZpf3PLSRxgdX1UY5KiN7EUR6nv3WfR3VNZ7f5UgokKoVfXC'
+    provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_TOKEN']
   end
-
 end
 
 # Set up the controllers and helpers
