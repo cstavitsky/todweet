@@ -3,20 +3,30 @@
   <div class="title-section">
     <h1> It's time to Compweet Your Twasks! </h1>
     <div class="task-container">
+      <form action="/tasks" method="post">
+      <input class="add-task" type="text" name="task[description]" placeholder="put your twask here!">
+      <input class="add-task" type="text" name="task[tweet_to]" placeholder="to tweet @">
+      <input class="task-button" type="submit" value="add twask">
+    </form>
       <ul class="task-list">
         <% @user.tasks.each do |task| %>
-        <li class="task"><input id="checkboxes" type="checkbox"><%= task.description %>
-<a id="Twitter_button" href="https://twitter.com/share?url=google.com&text=I just finished <%= task.description %>!" class="twitter-share-button" data-via="<%=
-@user.nickname %>">Tweet</a>
+          <input id="checkboxes" type="checkbox">
+            <li class="task">
+              <%= task.description %>
+              <!-- <form action="/tasks" method="post"><input name="_method" type="hidden" value="delete" /></form> -->
+            <a id="Twitter_button" href="https://twitter.com/share?url=www.compweeted.com&text=I just finished <%= task.description %>! <%=
+            task.tweet_to %>" class="twitter-share-button">Tweet</a>
 
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-        </li>
-      <% end %>
+              <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
+              </script>
+            </li>
+        <% end %>
       </ul>
     </div>
   </div>
 
 </div>
+
 
 
 

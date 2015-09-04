@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :screen_name
       t.string :oauth_token
       t.string :oauth_token_secret
-      t.integer :twitter_user_id
+      t.string :twitter_user_id
 
       t.timestamps
     end
