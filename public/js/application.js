@@ -10,9 +10,8 @@ $(document).ready(function() {
 
   //when the page loads, find all the checkboxes that have completed tasks and select them, and then change them to prop checked = true.
   // First, load the widgets.js file asynchronously
-twttr.ready(function (twttr) {
+twttr.ready(function () {
     twttr.events.bind('tweet', function(event) {
-      alert("tweet!");
       $(event.target).closest("div li form").find(".checkboxes").click();
     });
    });
