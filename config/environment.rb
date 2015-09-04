@@ -40,8 +40,7 @@ configure do
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
 
-
-  #Use omniauth stuff.
+  # Use omniauth stuff.
   use OmniAuth::Builder do
     provider :twitter, 'Vw9bPHQW7gjKJcYFqhWVPXAnD', 'jRIZpf3PLSRxgdX1UY5KiN7EUR6nv3WfR3VNZ7f5UgokKoVfXC'
   end
