@@ -1,30 +1,36 @@
+<script src="http://platform.twitter.com/widgets.js"></script>
+
 <div class="main">
 
   <div class="title-section">
-    <h1> It's time to Compweet Your Twasks! </h1>
+    <h1> It's time to Compweet Your Tasks! </h1>
     <div class="task-container">
       <form action="/tasks" method="post">
-      <input class="add-task" type="text" name="task[description]" placeholder="put your twask here!">
+      <input class="add-task" type="text" name="task[description]" placeholder="put your task here!">
       <input class="add-task" type="text" name="task[tweet_to]" placeholder="to tweet @">
-      <input class="task-button" type="submit" value="add twask">
+      <input class="task-button" type="submit" value="add task">
     </form>
       <ul class="task-list">
         <% current_user.tasks.each do |task| %>
-        <li class="task">
-          <form action="/tasks/<%=task.id%>/edit" method="post" class="checkboxform">
-          <input type="hidden" name="_method" value="put">
-            <label for="option">
-                <input class="checkboxes" id="<%=task.id%>" type="checkbox" <%="checked" if task.completed %>>
-            </label>
-              <%= task.description %>
-                <a id="Twitter_button" href="https://twitter.com/share?url=www.compweeted.com&text=I just finished <%= task.description %>! <%=
-            task.tweet_to %>" class="twitter-share-button">Tweet</a>
+        <div id="<%=task.id%>">
+          <li class="task">
+            <form action="/tasks/<%=task.id%>/edit" method="post" class="checkboxform">
+            <input type="hidden" name="_method" value="put">
+              <label for="option">
+                  <input class="checkboxes"  type="checkbox" <%="checked" if task.completed %>>
+              </label>
+                <%= task.description %>
+                  <a id="Twitter_button" href="https://twitter.com/share?url=www.compweeted.com&text=I just finished <%= task.description %>! <%=
+              task.tweet_to %>" class="twitter-share-button">Tweet</a>
 
-              <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
-              </script>
-          </form>
-            </li>
-        <% end %>
+
+
+                <div class="pls">
+                </div>
+            </form>
+              </li>
+            </div>
+          <% end %>
       </ul>
     </div>
   </div>

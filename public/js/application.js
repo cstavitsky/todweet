@@ -9,22 +9,25 @@ $(document).ready(function() {
   // });
 
   //when the page loads, find all the checkboxes that have completed tasks and select them, and then change them to prop checked = true.
-
-
+  // First, load the widgets.js file asynchronously
+twttr.ready(function () {
+    twttr.events.bind('tweet', function(event) {
+      $(event.target).closest("div li form").find(".checkboxes").click();
+    });
+   });
 
   $(".checkboxform").on("click", ":checkbox", function(){
-
-
-    var id = $(this).attr('id');
+    var id = $(this).closest("div").attr('id');
 
     var request = $.ajax({
       url: "/tasks/"+id+"/edit",
       method: 'put'
     })
 
-  request.done(function(responseData){
-    // $("#"+id).prop("checked", true);
-  })
+    request.done(function(responseData){
+      // $("#"+id).prop("checked", true);
+      $("Twitter_button").click();
+    })
 
   })
 });
