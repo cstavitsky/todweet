@@ -1,6 +1,6 @@
 post '/tasks' do
   @task = Task.new(params[:task])
-  @user = User.find_by(twitter_user_id: session[:tuid])
+  @user = current_user
   @user.tasks << @task
   if @task.save
     redirect '/'
