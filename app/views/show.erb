@@ -9,7 +9,7 @@
       <input class="task-button" type="submit" value="add twask">
     </form>
       <ul class="task-list">
-        <% @user.tasks.each do |task| %>
+        <% current_user.tasks.each do |task| %>
           <input id="checkboxes" type="checkbox">
             <li class="task">
               <%= task.description %>
